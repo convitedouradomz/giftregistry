@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Sugestões de Presentes | Convite Digital</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(145deg, #fef9f0 0%, #f5efe3 100%);
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+        padding: 2rem 1.5rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* container principal estilo cartão elegante */
+      .invitation-wrapper {
+        max-width: 880px;
+        width: 100%;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 2rem;
+        box-shadow:
+          0 30px 50px -20px rgba(0, 0, 0, 0.2),
+          0 4px 12px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        transition: all 0.2s ease;
+      }
+
+      /* cabeçalho e área de introdução */
+      .invitation-header {
+        padding: 2.2rem 2rem 1.5rem 2rem;
+        text-align: center;
+        background: linear-gradient(115deg, #fffaf3 0%, #fff5eb 100%);
+        border-bottom: 1px solid #f0e4d4;
+      }
+
+      .invitation-header h1 {
+        font-size: 2.3rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        background: linear-gradient(135deg, #b8860b, #d4a373, #8b5a2b);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: 0.75rem;
+      }
+
+      .gift-badge {
+        display: inline-block;
+        background: #f7ede3;
+        border-radius: 60px;
+        padding: 0.25rem 1.2rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #b sixteen 7b3f00;
+        color: #a66b38;
+        margin-bottom: 1rem;
+        letter-spacing: 0.5px;
+        border: 1px solid #f0ddcc;
+      }
+
+      /* introdução criativa estilo convite */
+      .welcome-message {
+        max-width: 580px;
+        margin: 1rem auto 0.5rem auto;
+        background: #fffef7;
+        padding: 1.2rem 1.5rem;
+        border-radius: 28px;
+        box-shadow:
+          0 6px 14px rgba(0, 0, 0, 0.02),
+          inset 0 1px 0 rgba(255, 255, 240, 0.8);
+        border: 1px solid #faebd2;
+      }
+
+      .welcome-message p {
+        font-size: 1rem;
+        line-height: 1.55;
+        color: #4a3727;
+        font-weight: 450;
+      }
+
+      .welcome-message .highlight {
+        font-weight: 600;
+        color: #c27e3a;
+        background: linear-gradient(120deg, #fff0e0, transparent);
+        padding: 0 0.2rem;
+        border-radius: 12px;
+      }
+
+      .soft-divider {
+        width: 70px;
+        height: 2px;
+        background: #edd9c0;
+        margin: 1rem auto 0.2rem auto;
+        border-radius: 4px;
+      }
+
+      /* container do formulário (card-style) */
+      .form-card {
+        padding: 1.5rem 2rem 2rem 2rem;
+        background: #ffffff;
+      }
+
+      .form-container {
+        background: #ffffff;
+        border-radius: 1.5rem;
+        box-shadow:
+          0 8px 24px rgba(0, 0, 0, 0.04),
+          0 1px 2px rgba(0, 0, 0, 0.03);
+        border: 1px solid #f1e8df;
+        overflow: hidden;
+      }
+
+      .jotform-iframe {
+        width: 100%;
+        height: 750px;
+        border: none;
+        display: block;
+        background: #fff;
+      }
+
+      .iframe-note {
+        text-align: center;
+        font-size: 0.7rem;
+        color: #b48c63;
+        padding: 0.8rem 1rem 0 1rem;
+        border-top: 1px solid #f8efe6;
+        margin-top: 0.6rem;
+        letter-spacing: 0.2px;
+      }
+
+      /* rodapé com direitos e logo + instagram */
+      .invitation-footer {
+        padding: 1.2rem 2rem 1.5rem 2rem;
+        text-align: center;
+        border-top: 1px solid #f3e9df;
+        background: #fefbf7;
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-logo {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+        border-radius: 12px;
+        background: #f5ede4;
+        padding: 4px;
+      }
+
+      .brand-name {
+        font-weight: 600;
+        font-size: 1rem;
+        color: #7c5b3a;
+        letter-spacing: -0.2px;
+      }
+
+      .instagram-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #f2ebe2;
+        padding: 6px 14px;
+        border-radius: 40px;
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #8b5a2b;
+        transition: all 0.2s;
+        margin-left: 4px;
+      }
+
+      .instagram-link:hover {
+        background: #e7dbcf;
+        transform: scale(1.02);
+      }
+
+      .rights {
+        font-size: 0.7rem;
+        color: #a78967;
+        margin-top: 0.5rem;
+        letter-spacing: 0.3px;
+      }
+
+      /* responsividade */
+      @media (max-width: 680px) {
+        body {
+          padding: 1rem;
+        }
+        .invitation-header {
+          padding: 1.5rem 1.2rem 1rem 1.2rem;
+        }
+        .invitation-header h1 {
+          font-size: 1.8rem;
+        }
+        .welcome-message {
+          padding: 1rem;
+          margin: 0.8rem 0.4rem;
+        }
+        .welcome-message p {
+          font-size: 0.9rem;
+        }
+        .form-card {
+          padding: 1rem 1.2rem 1.5rem 1.2rem;
+        }
+        .jotform-iframe {
+          height: 700px;
+        }
+        .footer-brand {
+          gap: 0.5rem;
+        }
+        .footer-logo {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .jotform-iframe {
+          height: 680px;
+        }
+        .invitation-header h1 {
+          font-size: 1.6rem;
+        }
+        .instagram-link span {
+          display: inline;
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      iframe {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="invitation-wrapper">
+      <div class="invitation-header">
+        <div class="gift-badge">✨ momento especial ✨</div>
+        <h1>Sugestões de Presentes</h1>
+        <div class="soft-divider"></div>
+
+        <!-- introdução criativa e acolhedora para os convidados -->
+        <div class="welcome-message">
+          <p>
+            🕊️ <span class="highlight">Seja bem-vindo(a)!</span> Ficamos muito
+            felizes pela sua presença neste momento único.<br /><br />
+            Com muito carinho, preparamos uma lista especial de sugestões para
+            inspirar o seu presente. Cada ideia foi pensada com afeto para
+            tornar a nossa celebração ainda mais memorável.
+            <strong>Escolha com o coração</strong> — afinal, o que importa é o
+            gesto e a alegria de compartilharmos este instante.<br />
+            ✨ <em>Toque no item desejado e confirme sua escolha.</em> ✨
+          </p>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="form-container">
+          <!-- 
+        Formulário Jotform incorporado via iframe.
+        Link direto do formulário: https://form.jotform.com/261062825481052
+        Totalmente responsivo e seguro.
+      -->
+          <iframe
+            class="jotform-iframe"
+            title="Formulário de Sugestões de Presentes - Convite Dourado"
+            src="https://form.jotform.com/261062825481052"
+            loading="lazy"
+            allow="
+              geolocation;
+              microphone;
+              camera;
+              payment;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+        <div class="iframe-note">
+          🔒 Escolha segura · sua seleção é registrada com discrição
+        </div>
+      </div>
+
+      <div class="invitation-footer">
+        <div class="footer-brand">
+          <!-- Logo: arquivo logoCD.jpg (certifique-se que está na mesma pasta) -->
+          <img
+            src="logoCD.jpg"
+            alt="Convites Dourados Moçambique"
+            class="footer-logo"
+            onerror="
+              this.style.opacity = '0.5';
+              this.alt = 'logo CD';
+            "
+          />
+          <span class="brand-name">Convites Dourados Moçambique</span>
+          <a
+            href="https://www.instagram.com/convitedouradomz/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="instagram-link"
+          >
+            📸 @convitedouradomz
+          </a>
+        </div>
+        <div class="rights">
+          © 2025 Convites Dourados Moçambique · Todos os direitos reservados
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const iframe = document.querySelector(".jotform-iframe");
+        if (!iframe) return;
+
+        function adjustIframeHeight() {
+          if (window.innerWidth <= 480) {
+            iframe.style.height = "680px";
+          } else if (window.innerWidth <= 768) {
+            iframe.style.height = "720px";
+          } else {
+            iframe.style.height = "750px";
+          }
+        }
+
+        window.addEventListener("resize", function () {
+          adjustIframeHeight();
+        });
+
+        iframe.addEventListener("load", function () {
+          adjustIframeHeight();
+        });
+
+        adjustIframeHeight();
+      })();
+    </script>
+  </body>
+</html>
